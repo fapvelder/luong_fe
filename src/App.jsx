@@ -3,10 +3,10 @@ import EmployeeRateSettings from "./components/EmployeeRateSettings";
 import EmployeeForm from "./components/EmployeeForm";
 import EmployeeTabs from "./components/EmployeeTabs";
 import WorkLogForm from "./components/WorkLogForm";
-import PayrollTable from "./components/PayrollTable";
 
 import { requestApi } from "./services/api";
 import { today, currentMonth } from "./utils/format";
+import PayrollTable from "./components/PayRollTable";
 
 function App() {
   const [employees, setEmployees] = useState([]);
