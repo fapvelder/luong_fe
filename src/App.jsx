@@ -127,10 +127,21 @@ function App() {
       showMessage("Vui lòng chọn ít nhất một ngày công.");
       return;
     }
-
+const selectedSalary = workLogs
+  .filter((workLog) => {
+    return selectedLogIds.includes(workLog.id);
+  })
+  .reduce((total, workLog) => {
+    return total + workLog.salary;
+  }, 0);
     const isConfirmed = window.confirm(
-      `Bạn có chắc muốn trả lương cho ${selectedLogIds.length} ngày đã chọn không?`,
-    );
+  `Xác nhận trả lương?
+
+Số ngày được chọn: ${selectedLogIds.length}
+Tổng tiền phải trả: ${selectedSalary.toLocaleString("vi-VN")} VNĐ
+
+Sau khi xác nhận, các ngày này sẽ chuyển sang trạng thái "Đã trả".`,
+);
 
     if (!isConfirmed) {
       return;

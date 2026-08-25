@@ -24,6 +24,8 @@ function PayrollTable({
       return total + workLog.salary;
     }, 0);
 
+    
+
   return (
     <section>
       <div className="head">

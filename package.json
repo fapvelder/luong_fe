@@ -1,5 +1,6 @@
 {
   "name": "quan-ly-luong-frontend",
+  "proxy":"https://luong-be.onrender.com",
   "private": true,
   "version": "1.0.0",
   "type": "module",
