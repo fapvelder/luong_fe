@@ -36,6 +36,10 @@ function App() {
     purple_pot_start: "",
     purple_pot_end: "",
     purple_pot_price: 14000,
+    
+    eel_start: "",
+    eel_end: "",
+    eel_price: 1150,
   });
 
   const selectedEmployee = employees.find(

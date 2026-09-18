@@ -49,13 +49,15 @@ function WorkLogForm({
           required
         />
         <br />
+        
         <input
           type="number"
           name="pink_pot_start"
           placeholder="Pot hồng đầu ngày"
           value={workLogForm.pink_pot_start}
           onChange={onChange}
-          required
+          min="0"
+
         />
 
         <input
@@ -64,7 +66,7 @@ function WorkLogForm({
           placeholder="Pot hồng cuối ngày"
           value={workLogForm.pink_pot_end}
           onChange={onChange}
-          required
+          min="0"
         />
 
         <input
@@ -73,7 +75,7 @@ function WorkLogForm({
           placeholder="Đơn giá Pot hồng"
           value={workLogForm.pink_pot_price}
           onChange={onChange}
-          required
+          min="0"
         />
         <br />
         <input
@@ -82,7 +84,7 @@ function WorkLogForm({
           placeholder="Pot tím đầu ngày"
           value={workLogForm.purple_pot_start}
           onChange={onChange}
-          required
+          min="0"
         />
 
         <input
@@ -91,7 +93,7 @@ function WorkLogForm({
           placeholder="Pot tím cuối ngày"
           value={workLogForm.purple_pot_end}
           onChange={onChange}
-          required
+          min="0"
         />
 
         <input
@@ -99,6 +101,33 @@ function WorkLogForm({
           name="purple_pot_price"
           placeholder="Đơn giá Pot tím"
           value={workLogForm.purple_pot_price}
+          onChange={onChange}
+          min="0"
+        />
+        <br />
+         <input
+          type="number"
+          name="eel_start"
+          placeholder="Lươn đầu ngày"
+          value={workLogForm.eel_start}
+          onChange={onChange}
+          min="0"
+        />
+
+        <input
+          type="number"
+          name="eel_end"
+          placeholder="Lươn cuối ngày"
+          value={workLogForm.eel_end}
+          onChange={onChange}
+          min="0"
+        />
+
+        <input
+          type="number"
+          name="eel_price"
+          placeholder="Đơn giá Lươn"
+          value={workLogForm.eel_price}
           onChange={onChange}
           required
         />

@@ -13,13 +13,13 @@ function PayrollTable({
   onDeleteWorkLog,
 }) {
   const unpaidSalary = workLogs
-    .filter((workLog) => workLog.is_paid === 0)
+    .filter((workLog) => !workLog.is_paid)
     .reduce((total, workLog) => {
       return total + workLog.salary;
     }, 0);
 
   const paidSalary = workLogs
-    .filter((workLog) => workLog.is_paid === 1)
+    .filter((workLog) => workLog.is_paid)
     .reduce((total, workLog) => {
       return total + workLog.salary;
     }, 0);
@@ -66,9 +66,11 @@ function PayrollTable({
 
               <th>Pot hồng</th>
               <th>Pot tím</th>
+              <th>Lươn</th>
 
               <th>Điều chỉnh Pot hồng</th>
               <th>Điều chỉnh Pot tím</th>
+              <th>Điều chỉnh lươn</th>
 
               <th>Meso thực nhận</th>
               <th>Số giờ</th>
@@ -87,7 +89,7 @@ function PayrollTable({
             )}
 
             {workLogs.map((workLog) => {
-              const isPaid = workLog.is_paid === 1;
+              const isPaid = workLog.is_paid === true;
 
               return (
                 <tr key={workLog.id} className={isPaid ? "paid-row" : ""}>
@@ -109,10 +111,13 @@ function PayrollTable({
                   <td>{formatNumber(workLog.pink_pot_change)}</td>
 
                   <td>{formatNumber(workLog.purple_pot_change)}</td>
+                  <td>{formatNumber(workLog.eel_change)}</td>
 
                   <td>{formatNumber(workLog.pink_pot_meso_adjustment)}</td>
 
                   <td>{formatNumber(workLog.purple_pot_meso_adjustment)}</td>
+
+                  <td>{formatNumber(workLog.eel_meso_adjustment)}</td>
 
                   <td>{formatNumber(workLog.meso_net)}</td>
 
