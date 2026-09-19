@@ -11,9 +11,9 @@ function WorkLogForm({
       <div className="head">
         <h2>Chấm công: {employee.name}</h2>
 
-        {/* <button type="button" className="danger" onClick={onDeleteEmployee}>
+        <button type="button" className="danger" onClick={onDeleteEmployee}>
           Xóa nhân viên
-        </button> */}
+        </button>
       </div>
 
       <form onSubmit={onSubmit} className="grid log">

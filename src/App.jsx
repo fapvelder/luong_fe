@@ -15,7 +15,13 @@ function App() {
   const [workLogs, setWorkLogs] = useState([]);
   const [selectedLogIds, setSelectedLogIds] = useState([]);
   const [message, setMessage] = useState("");
-
+const [isLoggedIn, setIsLoggedIn] = useState(() => {
+  return sessionStorage.getItem("payroll_logged_in") === "true";
+});
+function handleLogout() {
+  sessionStorage.removeItem("payroll_logged_in");
+  setIsLoggedIn(false);
+}
   const [employeeForm, setEmployeeForm] = useState({
     name: "",
     meso_hour: 9000000,
@@ -366,6 +372,7 @@ Sau khi xác nhận, các ngày này sẽ chuyển sang trạng thái "Đã tr�
         </>
       )}
     </main>
+    
   );
 }
 
